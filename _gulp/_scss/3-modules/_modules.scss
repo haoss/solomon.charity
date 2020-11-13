@@ -219,6 +219,7 @@
     font-weight: bold;
     margin: 0 0 30px 0;
     line-height: normal;
+    white-space: nowrap;
     .fa {
       font-size: 22px;
       margin-right: 10px;
@@ -226,6 +227,9 @@
     }
     &:hover {
       color: #F87D6C;
+    }
+    .--hidden {
+      display: none;
     }
   }
   &__bottom {
@@ -254,10 +258,55 @@
       line-height: 1;
       font-size: 40px;
       color: #F58971;
+      white-space: nowrap;
     }
   }
   .form-checkbox.--last {
     margin-bottom: 25px;
+  }
+  @media (max-width: 1199px) {
+    &__bottom {
+      .btn {
+        min-width: 240px;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    box-shadow: 450px 0 0 #fafafa,-450px 0 0 #fafafa;
+    margin-left: 0;
+    margin-bottom: 25px;
+    padding: 35px 15px;
+  }
+  @media (max-width: 599px) {
+    &__input {
+      flex-direction: column;
+      padding-bottom: 15px;
+      &>div {
+        &+div {
+          margin-left: 0;
+        }
+      }
+      .form-group {
+        margin-bottom: 5px;
+      }
+    }
+    &__bottom {
+      flex-direction: column;
+      &>div {
+        &+div {
+          margin-left: 0;
+          margin-top: 25px;
+        }
+      }
+    }
+    &__btn {
+      .--visible {
+        display: none;
+      }
+      .--hidden {
+        display: inline-block;
+      }
+    }
   }
 }
 
@@ -368,6 +417,157 @@
     left: auto;
     &::before {
       content: "\f104";
+    }
+  }
+}
+
+.page-nav {
+  &.--new {
+    .page-nav-pages {
+      text-align: left;
+      font-size: 14px;
+      &>a, &>span {
+        display: inline-block;
+        text-decoration: none;
+        margin: 0;
+        border: 0;
+        &+* {
+          margin-left: 30px;
+        }
+        &.active {
+          font-size: 22px;
+          color: #F58971;
+        }
+      }
+    }
+    .page-nav__count {
+      text-align: right;
+      font-size: 14px;
+      b {
+        font-size: 16px;
+      }
+    }
+    &>.row {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.services {
+  &__block {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+    &-thumb {
+      flex-shrink: 0;
+      width: 360px;
+      img {
+        clip-path: polygon(0 0, 100% 0, calc(100% - 34px) 100%, 0% 100%);
+        height: 220px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &-title {
+      margin-bottom: 22px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    &-content {
+      flex-grow: 1;
+      padding: 0 30px;
+      p {
+        line-height: 1.7;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &-last {
+      width: 200px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    &-price {
+      position: relative;
+      z-index: 7;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      background: #FAFAFA;
+      clip-path: polygon(35px 0, 100% 0, 100% 100%, 0% 100%);
+      padding-left: 35px;
+      .span {
+        display: block;
+        line-height: 1;
+      }
+      strong {
+        display: block;
+        line-height: 1;
+        white-space: nowrap;
+        color: #F58971;
+        font-size: 40px;
+      }
+    }
+    &-btn {
+      height: 40px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      background: #F87D6C;
+      border: 0;
+      display: block;
+      width: 100%;
+      color: #fff;
+      padding-top: 5px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      &:hover {
+        background: #a91818;
+      }
+    }
+  }
+  @media (max-width: 1199px) {
+    &__block {
+      &-thumb {
+        width: 300px;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    &__block {
+      flex-wrap: wrap;
+      &-thumb {
+        margin-bottom: 25px;
+        width: 100%;
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+      &-content {
+        width: calc(100% - 200px);
+        padding-left: 0;
+      }
+    }
+  }
+  @media (max-width: 599px) {
+    &__block {
+      &-content {
+        width: 100%;
+        padding: 0;
+      }
+      &-last {
+        margin: 25px auto 0;
+      }
     }
   }
 }
