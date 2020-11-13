@@ -1,0 +1,63 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Твоя доля в Торе' + ' - SOLOMON.charity' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    .main
+      .header.--new(style="background-image: url('./tmp/header-bg-1.png');")
+        .d-flex.item-center.justify-center
+          .container
+            h1 Духовные сервисы 
+              span.d-block.fs60 для всех 
+            h2 Твоя доля в Торе
+            p Cоздан для помощи наиболее незащищенным 
+              br 
+              | слоям населения
+
+      .section-content
+        .container
+          
+          .row
+            .col-xs-12.col-md-10.col-md-offset-1.col-lg-10.col-lg-offset-1
+              // 
+              .bordered-blocks.--new
+                .bordered-item
+                  .row
+                    .col-md-6.text-block
+                      h3
+                        | Заказать 
+                        span букву
+                      p Он собрал семь своих заглавных букв, подпоясал инициал за пояс и пустился в дорогу.
+                      a(href="#!").btn.btn-1 перейти к проекту
+                    .col-md-6.img-block
+                      .img-wrapper
+                        img(src='./tmp/img-1-1.png')
+                .bordered-item
+                  .row
+                    .col-md-6.img-block
+                      .img-wrapper
+                        img(src='./tmp/img-1-2.png')
+                    .col-md-6.text-block
+                      h3
+                        | Уроки 
+                        span раввинов
+                      p Взобравшись на первую вершину курсивных гор, бросил он последний взгляд назад, на силуэт своего родного города Буквоград, на заголовок деревни Алфавит и на подзаголовок своего переулка Строчка.
+                      a(href="#!").btn.btn-1 перейти к проекту
+
+    include ./_include/_footer
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

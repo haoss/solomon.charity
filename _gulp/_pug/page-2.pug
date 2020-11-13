@@ -1,0 +1,68 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Молитвы на святых местах все' + ' - SOLOMON.charity' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    .main
+      .header.--new(style="background-image: url('./tmp/header-bg-2.png');")
+        .d-flex.item-center.justify-center
+          .container
+            h1 Духовные сервисы 
+              span.d-block.fs60 для всех 
+            h2 Молитвы на святых местах
+            p Cоздан для помощи наиболее незащищенным 
+              br 
+              | слоям населения
+
+      .section-content
+        .container
+          
+          .bordered-blocks.--new2
+            .bordered-item
+              .row
+                .col-md-6.text-block
+                  h3 
+                    span.--color Заказать молитву на 
+                    | Название места которое может быть разной длины
+                  a(href="#!").btn.btn-1 заказать молитву
+                .col-md-6
+                  .img-wrapper
+                    img(src='./tmp/img-2-1.png')
+            .bordered-item
+              .row
+                .col-md-6.text-block
+                  h3 
+                    span.--color Заказать молитву на 
+                    | Название места которое может быть разной длины
+                  a(href="#!").btn.btn-1 заказать молитву
+                .col-md-6
+                  .img-wrapper
+                    img(src='./tmp/img-2-2.png')
+            .bordered-item
+              .row
+                .col-md-6.text-block
+                  h3 
+                    span.--color Заказать молитву на 
+                    | Название места которое может быть разной длины
+                  a(href="#!").btn.btn-1 заказать молитву
+                .col-md-6
+                  .img-wrapper
+                    img(src='./tmp/img-2-3.png')
+
+    include ./_include/_footer
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

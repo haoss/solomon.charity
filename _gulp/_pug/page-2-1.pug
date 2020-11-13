@@ -1,0 +1,84 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Молитвы на святых местах все' + ' - SOLOMON.charity' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    .main
+      .header.--new(style="background-image: url('./tmp/header-bg-2.png');")
+        .d-flex.item-center.justify-center
+          .container
+            h1 Духовные сервисы 
+              span.d-block.fs60 для всех 
+            h2 Молитвы на святых местах
+            p Cоздан для помощи наиболее незащищенным 
+              br 
+              | слоям населения
+
+      .section-content
+        .container
+          
+          .row
+            .col-md-6
+              .section-content__content
+                h1 Название места которое может быть разной длины
+                p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+                p Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные  предложения залетают прямо в рот. 
+                p Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку. Он собрал семь своих заглавных букв, подпоясал инициал за пояс и пустился в дорогу. 
+                p Взобравшись на первую вершину курсивных гор, бросил он последний взгляд назад, на силуэт своего родного города Буквоград, на заголовок деревни Алфавит и на подзаголовок своего переулка Строчка. Грустный риторический вопрос скатился по его щеке и он продолжил свой путь. По дороге встретил текст рукопись. Она предупредила его: «В моей стране все переписывается по несколько раз. 
+            .col-md-6
+              .order-prayer
+                form(action="#!")
+                  .order-prayer__row
+                    .order-prayer__input
+                      .form-group
+                        input.form-control.--new(type="text" placeholder="Имя" value="Иосиф")
+                      .form-group
+                        input.form-control.--new(type="text" placeholder="Фамилия")
+                  button(type="button").order-prayer__btn
+                    i.fa.fa-plus-circle(aria-hidden='true')
+                    | добавить еще одного человека
+
+                  .form-checkbox.--new
+                    input#donation_agree(type='checkbox' name='donation_agree' checked)
+                    label(for='donation_agree') Согласен с офертой
+                  .form-checkbox.--new.--last
+                    input#subscribe_me(type='checkbox' name='subscribe_me')
+                    label(for='subscribe_me') Подписаться на рассылку
+
+                  .order-prayer__bottom
+                    div
+                      .order-prayer__price
+                        strong 9 999 
+                        span.span рублей
+                    div
+                      button(type="submit").btn.btn-1 заказать молитву
+
+          .j-slider
+            .slide
+              img(src="./tmp/img-3.png", alt="")
+            .slide
+              img(src="./tmp/img-3.png", alt="")
+            .slide
+              img(src="./tmp/img-3.png", alt="")
+            .slide
+              img(src="./tmp/img-3.png", alt="")
+            .slide
+              img(src="./tmp/img-3.png", alt="")
+
+    include ./_include/_footer
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+
