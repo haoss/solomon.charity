@@ -3,3 +3,37 @@
 //-     div
 //-     div
 //-     div
+
+.modal.fade#order-modal(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+  .modal-dialog-custom.modal-dialog-centered.container(role='document')
+    .modal-content
+      button.close(type='button' data-dismiss='modal' aria-label='Close')
+      .modal-body.order-modal
+        
+        .order-modal__body
+          .order-modal__thumb
+            img(src="./tmp/img-10.png", alt="")
+          .order-modal__content
+            .h1 
+              span.--color Вы заказываете
+              | Цдака за успешный брак
+            p Единственное, что от меня осталось, это приставка «и». Возвращайся ты лучше в свою безопасную страну». Не послушавшись рукописи, наш текст продолжил свой путь. Вскоре ему повстречался коварный составитель рекламных текстов, напоивший его языком и речью и заманивший в свое агенство, которое использовало его снова и снова в своих проектах. И если его не переписали, то живет он там до сих пор.
+        
+        .order-modal__footer
+          form(action="#!")
+            .order-modal__footer-wrapper
+              .first
+                .order-modal__footer-input
+                  div
+                    input.form-control.--new(type="text" placeholder="Имя" value="Иосиф")
+                  div
+                    input.form-control.--new(type="text" placeholder="Фамилия")
+                .form-checkbox.--new
+                  input#donation_agree(type='checkbox' name='donation_agree' checked)
+                  label(for='donation_agree') Согласен с офертой
+              .last
+                .order-modal__footer-btns
+                  .order-modal__footer-price
+                    strong 9 999 
+                    span.span рублей
+                  button(type="submit").btn.btn-1 заказать

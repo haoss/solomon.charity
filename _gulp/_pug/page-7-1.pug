@@ -1,0 +1,56 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Уроки у раввинов' + ' - SOLOMON.charity' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    .main
+      .header.--new(style="background-image: url('./tmp/header-bg-7-1.png');")
+        .d-flex.item-center.justify-center
+          .container
+            h1 Блог 
+            h2 Наши статьи и мысли
+            p Cоздан для помощи наиболее незащищенным 
+              br 
+              | слоям населения
+
+      .section-content
+        .container
+
+          .blog-document
+            .blog-document__thumb
+              img(src="./tmp/img-9.png", alt="")
+            
+            h1 Привет, друзья!
+            h2 Сегодня я отмечаю свой День Рождения. Спасибо Вам за поздравления!
+
+            p Если позволите, то я хочу предложить Вам сделать мне небольшой подарок.
+            p В свой День рождения я хочу попросить подарить мне доброе дело. Ваш подарок для меня заключается в том, что вы окажите поддержку тем, кто действительно в этом нуждается больше, чем мы с Вами. Сейчас, все вместе, мы и фонд SOLOMON.charity активно занимаемся сбором средств для узников гетто. Я хочу помочь этому проекту и призываю вас сделать тоже самое в честь моего дня Рождения.
+
+            p
+              strong Я знаю, что вы будете рады помочь, тем более уделить на это надо всего пару минут. Благодарю вас за поздравления и желание помогать!
+
+            .clearfix
+
+            .share
+              div Поделиться в социальных сетях
+              div 
+                a(href="#!")
+                  img(src="./tmp/share.png", alt="")
+
+    include ./_include/_footer
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

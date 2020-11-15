@@ -3,7 +3,7 @@ doctype
 html(lang="ru")
 
   -var active = 'Главная' //активный пункт меню, список в header.jade
-  -var pageTitle = 'Тематические молитвы' + ' - SOLOMON.charity' //title страницы для генерации верстки
+  -var pageTitle = 'Счастливые моменты' + ' - SOLOMON.charity' //title страницы для генерации верстки
 
   include ./_include/_head
 
@@ -15,12 +15,12 @@ html(lang="ru")
     include ./_include/_header
 
     .main
-      .header.--new(style="background-image: url('./tmp/header-bg-3.png');")
+      .header.--new(style="background-image: url('./tmp/header-bg-5.png');")
         .d-flex.item-center.justify-center
           .container
             h1 Духовные сервисы 
               span.d-block.fs60 для всех 
-            h2 Тематические молитвы
+            h2 Счастливые моменты
             p Cоздан для помощи наиболее незащищенным 
               br 
               | слоям населения
@@ -32,42 +32,29 @@ html(lang="ru")
           .services
             .services__block
               .services__block-thumb
-                img(src="./tmp/img-4-1.png", alt="")
+                img(src="./tmp/img-6-1.png", alt="")
               .services__block-content
-                .services__block-title Память с названием один
+                .services__block-title Цикл уроков перед бракосочетанием
                 p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
                 p Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные  предложения залетают прямо в рот. 
               .services__block-last
-                button(type="button").services__block-btn заказать
+                button(type="button" data-toggle="modal" data-target="#order-modal").services__block-btn заказать
                 .services__block-price
                   div 
                     strong 9 999 
                     span.span рублей
             .services__block
               .services__block-thumb
-                img(src="./tmp/img-4-2.png", alt="")
+                img(src="./tmp/img-6-2.png", alt="")
               .services__block-content
-                .services__block-title Память с названием один
+                .services__block-title Цдака за успешный брак
                 p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
                 p Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные  предложения залетают прямо в рот. 
               .services__block-last
-                button(type="button").services__block-btn заказать
+                button(type="button" data-toggle="modal" data-target="#order-modal").services__block-btn заказать
                 .services__block-price
                   div 
                     strong 7 999 
-                    span.span рублей
-            .services__block
-              .services__block-thumb
-                img(src="./tmp/img-4-3.png", alt="")
-              .services__block-content
-                .services__block-title Память с названием один
-                p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
-                p Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные  предложения залетают прямо в рот. 
-              .services__block-last
-                button(type="button").services__block-btn заказать
-                .services__block-price
-                  div 
-                    strong 5 999 
                     span.span рублей
 
           .page-nav.clearfix.--new

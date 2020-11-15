@@ -1,0 +1,82 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Уроки у раввинов' + ' - SOLOMON.charity' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    .main
+      .header.--new(style="background-image: url('./tmp/header-bg-7.png');")
+        .d-flex.item-center.justify-center
+          .container
+            h1 Блог 
+            h2 Наши статьи и мысли
+            p Cоздан для помощи наиболее незащищенным 
+              br 
+              | слоям населения
+
+      .section-content
+        .container
+
+          // List 
+          .blog
+            .blog__row
+              .blog__block
+                .blog__block-thumb
+                  a(href="#!")
+                    img(src="./tmp/img-8-1.png", alt="")
+                a(href="#!").blog__block-content
+                  p Мы завершили сбор для 6-месячного Натана
+              .blog__block
+                .blog__block-thumb
+                  a(href="#!")
+                    img(src="./tmp/img-8-2.png", alt="")
+                a(href="#!").blog__block-content
+                  p Мы завершили сбор для Ирины и готовимся к покупке протеза
+              .blog__block
+                .blog__block-thumb
+                  a(href="#!")
+                    img(src="./tmp/img-8-3.png", alt="")
+                a(href="#!").blog__block-content
+                  p Мы завершили сбор для Дины, которая одна воспитывает сына
+              .blog__block
+                .blog__block-thumb
+                  a(href="#!")
+                    img(src="./tmp/img-8-4.png", alt="")
+                a(href="#!").blog__block-content
+                  p Благотворительная акция ко дню рождения Хаи Шморгун
+              .blog__block
+                .blog__block-thumb
+                  a(href="#!")
+                    img(src="./tmp/img-8-5.png", alt="")
+                a(href="#!").blog__block-content
+                  p Мы завершили сбор для 18-летней Нины
+
+          .page-nav.clearfix.--new
+            .row
+              .col-xs-8.col-xxs-12
+                .page-nav-pages
+                  a(href='#!') 01
+                  a(href='#!') 02
+                  a.active(href='javascript: void(0);') 03
+                  span ...
+                  a(href='#!') 99
+              .col-xs-4.col-xxs-12
+                .page-nav__count Всего услуг: 
+                  b 16
+
+    include ./_include/_footer
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

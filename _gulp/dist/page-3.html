@@ -24,6 +24,48 @@
     </head>
     <body>
         <!-- Preloader-->
+        <div class="modal fade" id="order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog-custom modal-dialog-centered container" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body order-modal">
+                        <div class="order-modal__body">
+                            <div class="order-modal__thumb"><img src="./tmp/img-10.png" alt=""></div>
+                            <div class="order-modal__content">
+                                <div class="h1"> <span class="--color">Вы заказываете</span>Цдака за успешный брак</div>
+                                <p>Единственное, что от меня осталось, это приставка «и». Возвращайся ты лучше в свою безопасную страну». Не послушавшись рукописи, наш текст продолжил свой путь. Вскоре ему повстречался коварный составитель рекламных текстов, напоивший его языком и речью и заманивший в свое агенство, которое использовало его снова и снова в своих проектах. И если его не переписали, то живет он там до сих пор.</p>
+                            </div>
+                        </div>
+                        <div class="order-modal__footer">
+                            <form action="#!">
+                                <div class="order-modal__footer-wrapper">
+                                    <div class="first">
+                                        <div class="order-modal__footer-input">
+                                            <div>
+                                                <input class="form-control --new" type="text" placeholder="Имя" value="Иосиф">
+                                            </div>
+                                            <div>
+                                                <input class="form-control --new" type="text" placeholder="Фамилия">
+                                            </div>
+                                        </div>
+                                        <div class="form-checkbox --new">
+                                            <input id="donation_agree" type="checkbox" name="donation_agree" checked>
+                                            <label for="donation_agree">Согласен с офертой</label>
+                                        </div>
+                                    </div>
+                                    <div class="last">
+                                        <div class="order-modal__footer-btns">
+                                            <div class="order-modal__footer-price"><strong>9 999 </strong><span class="span">рублей</span></div>
+                                            <button class="btn btn-1" type="submit">заказать</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Header-->
         <header style="height: auto; min-height: auto; background: none; height: 140px; background: url('./tmp/header.png') top center no-repeat;"></header>
         <div class="main">
@@ -85,10 +127,10 @@
                     </div>
                     <div class="page-nav clearfix --new">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-xs-8 col-xxs-12">
                                 <div class="page-nav-pages"><a href="#!">01</a><a href="#!">02</a><a class="active" href="javascript: void(0);">03</a><span>...</span><a href="#!">99</a></div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-xs-4 col-xxs-12">
                                 <div class="page-nav__count">Всего услуг: <b>16</b></div>
                             </div>
                         </div>
