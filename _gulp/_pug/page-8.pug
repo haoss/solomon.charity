@@ -1,0 +1,54 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Заказать букву' + ' - SOLOMON.charity' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    .main
+      .header.--new(style="background-image: url('./tmp/header-bg-8.png');")
+        .d-flex.item-center.justify-center
+          .container
+            h1 Духовные сервисы 
+              span.d-block.fs60 для всех 
+            h2 Заказать букву
+            p Cоздан для помощи наиболее незащищенным 
+              br 
+              | слоям населения
+
+      .section-content
+        .container
+
+          .letter-document
+            .row
+              .col-md-6
+                h1 Далеко-далеко за словесными горами
+                h2 Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.
+
+                p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. 
+                p Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.
+
+              .col-md-6
+                .letter-document__thumb
+                  .div1
+                  .div2
+                  .div3
+                  .div4
+                  .div5
+                  img(src="./tmp/img-11.png", alt="")
+
+    include ./_include/_footer
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+
