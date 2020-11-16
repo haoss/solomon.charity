@@ -46,6 +46,70 @@ html(lang="ru")
                   .div5
                   img(src="./tmp/img-11.png", alt="")
 
+          .letter-order
+            .letter-order__head Поспешите приобрести букву в Торе и 
+              span.--color духовный щит для себя и своих близких
+            .letter-order__wrapper
+              .letter-order__left
+                .letter-order__input
+                  .form-group
+                    input.form-control.--new(type="text" placeholder="Имя" value="Иосиф")
+                  .form-group
+                    input.form-control.--new(type="text" placeholder="Фамилия")
+                .letter-order__h2 Что заказываем
+                .letter-order__select
+                  select.form-control
+                    option Фраза 1
+                    option Фраза 2
+                    option Фраза 3
+                    option Фраза 4
+                    option Фраза 5
+                .letter-order__info
+                  div
+                    p 
+                      b 1 
+                      | буква 
+                      b 999 
+                      | рублей
+                    p 
+                      b 1 
+                      | слово 
+                      b 9 999 
+                      | рублей
+                  div
+                    p 
+                      b 1 
+                      | предложение 
+                      b 999 999 
+                      | рублей
+                    p 
+                      b 1 
+                      | абзац 
+                      b 9 999 999 
+                      | рублей
+                .form-checkbox.--new
+                  input#donation_agree(type='checkbox' name='donation_agree' checked)
+                  label(for='donation_agree') Согласен с офертой
+                button(type="submit").btn.btn-1.letter-order__btn Оплатить
+              .letter-order__right
+                .letter-order__add
+                  .letter-order__add-wrapper
+                    .letter-order__add-block
+                      .letter-order__block-title
+                        | Буква 
+                        span 1 
+                        | для
+                      .letter-order__block-wrapper
+                        .div1
+                          .form-group
+                            input.form-control(type='text' name='letter-name-1' placeholder='Ваше имя')
+                        .div2
+                          .form-group
+                            input.form-control(type='text' name='letter-lastname-1' placeholder='Фамилия')
+                      .form-group
+                        input.form-control(type='text' name='letter-mother-1' placeholder='Имя матери')
+                  button.letter-order__add-btn(type='button') Добавить еще одну букву
+
     include ./_include/_footer
 
     // Load Scripts
