@@ -674,6 +674,7 @@
       right: 16px;
       bottom: -38px;
       min-height: 85px;
+      z-index: 5;
       p {
         margin-bottom: 0;
         line-height: 1.5;
@@ -682,9 +683,13 @@
     &:hover {
       .blog__block {
         &-thumb {
+          clip-path: none;
           &::before {
             opacity: 1;
             visibility: visible;
+          }
+          &::after {
+            display: none;
           }
         }
         &-content {
@@ -1305,6 +1310,423 @@
     &__add {
       &-btn {
         text-align: left;
+      }
+    }
+  }
+}
+
+.index-document {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 100px;
+  h2, .h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 25px 0;
+    color: #333;
+    text-align: left;
+    line-height: 1.3;
+  }
+}
+
+.index-advantages {
+  color: #000;
+  margin-bottom: 55px;
+  h2, .h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 55px 0;
+    line-height: 1.3;
+  }
+  &__row {
+    display: flex;
+    margin: 0 -15px;
+  }
+  &__block {
+    margin: 0 15px;
+    width: calc(33.3% - 30px);
+    font-size: 14px;
+    margin-bottom: 45px;
+    text-align: center;
+    p {
+      line-height: 1.6;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    h3 {
+      font-size: 20px;
+      margin: 0 0 7px 0;
+      text-align: center;
+    }
+  }
+  &__img {
+    margin-bottom: 25px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background: #F2F2F2;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: 21px;
+      opacity: 0.6;
+    }
+    img {
+      position: relative;
+      z-index: 5;
+    }
+  }
+  @media (max-width: 767px) {
+    &__row {
+      flex-direction: column;
+    }
+    &__block {
+      width: calc(100% - 30px);
+    }
+  }
+}
+
+.index-nav {
+  margin-bottom: 80px;
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  &__block {
+    margin: 0 15px 40px 15px;
+    width: calc(33.3% - 30px);
+    font-size: 22px;
+    &-thumb {
+      position: relative;
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        z-index: 5;
+        &:first-child {
+          position: absolute;
+          z-index: 1;
+          transform-origin: 50%;
+          transform: rotate(2deg);
+          opacity: 0.3;
+        }
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        border: 10px solid #F58971;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        z-index: 15;
+        background: rgba(#000,.5);
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    &-link {
+      color: #333 !important;
+      text-decoration: none !important;
+      font-weight: bold;
+      font-size: 22px;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+    &:hover {
+      .index-nav__block-thumb {
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+        img {
+          &:first-child {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    &__block {
+      width: calc(50% - 30px);
+    }
+  }
+  @media (max-width: 767px) {
+    &__block {
+      width: calc(100% - 30px);
+    }
+  }
+}
+
+.index-popular {
+  padding-bottom: 80px;
+  h2, .h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 35px 0;
+    line-height: 1.3;
+    text-align: left;
+    color: #333;
+  }
+  &__row {
+    display: flex;
+    margin: 0 -15px;
+  }
+  &__block {
+    margin: 0 15px 40px 15px;
+    width: calc(33.3% - 30px);
+    &-thumb {
+      position: relative;
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        clip-path: polygon(0 0, 100% 0, calc(100% - 34px) 100%, 0% 100%);
+      }
+    }
+    &-link {
+      color: #333 !important;
+      text-decoration: none !important;
+      font-weight: bold;
+      font-size: 18px;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    &__row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__block {
+      width: calc(50% - 30px);
+    }
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 40px;
+  }
+  @media (max-width: 599px) {
+    &__block {
+      width: calc(100% - 30px);
+      &-thumb {
+        img {
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.index-blog {
+  background: #FAFAFA;
+  padding: 80px 0;
+  &__row {
+    display: flex;
+    .first {
+      flex-shrink: 0;
+      width: 267px;
+      .h2, h2 {
+        text-align: left;
+        font-weight: 700;
+        font-size: 22px;
+        margin: 0 0 15px 0;
+        line-height: 1.5;
+        color: #333;
+        .span {
+          font-size: 28px;
+          display: block;
+        }
+      }
+    }
+    .last {
+      flex-grow: 1;
+      width: calc(100% - 267px);
+      padding-left: 25px;
+    }
+  }
+  &__btns {
+    display: flex;
+  }
+  &__btn {
+    &-left, &-right {
+      right: 0;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      background: #F58971;
+      opacity: 1;
+      top: auto;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      font-family: 'FontAwesome';
+      text-indent: 0;
+      font-size: 0;
+      border: 0;
+      &::before {
+        content: "\f105";
+        font-size: 20px;
+      }
+      &:hover {
+        opacity: 0.7 !important;
+      }
+    }
+    &-left {
+      right: 36px;
+      left: auto;
+      margin-right: 6px;
+      &::before {
+        content: "\f104";
+      }
+    }
+  }
+  .slide {
+    width: 262px;
+    margin-right: 15px;
+    .blog__block {
+      width: 100%;
+      margin: 0 0 50px 0;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 40px 0;
+    &__row {
+      flex-direction: column;
+      .first {
+        width: 100%;
+      }
+      .last {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 25px;
+      }
+    }
+  }
+}
+
+.index-info {
+  padding-bottom: 130px;
+  &__row {
+    display: flex;
+    align-items: flex-start;
+  }
+  &__content {
+    flex-grow: 1;
+    font-size: 18px;
+    color: #333;
+    padding-right: 55px;
+    p {
+      line-height: 1.5;
+    }
+    h2, .h2 {
+      text-align: left;
+      font-size: 45px;
+      color: #333;
+      margin: 0 0 25px 0;
+      line-height: 1;
+    }
+  }
+  &__quote {
+    position: relative;
+    padding-left: 28px;
+    padding-right: 30px;
+    font-style: italic;
+    color: #F58971;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+    padding-bottom: 44px;
+    p {
+      position: relative;
+      margin-bottom: 0;
+      z-index: 10;
+      line-height: 1.45;
+      padding-left: 60px;
+      &::before {
+        position: absolute;
+        content: '';
+        width: 42px;
+        height: 3px;
+        background: #F58971;
+        left: 0;
+        top: 14px;
+      }
+    }
+    &::before, &::after {
+      position: absolute;
+      z-index: 1;
+      background-position:  0 0;
+      background-repeat: no-repeat;
+      content: '';
+      width: 123px;
+      height: 88px;
+    }
+    &::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='123' height='88' viewBox='0 0 123 88' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30.3649 3.25952C15.2759 3.25952 3 15.5354 3 30.6245C3 37.8399 5.78393 44.6483 10.8387 49.7957C15.732 54.7786 22.2189 57.6633 29.1675 57.9623C29.2003 58.3965 29.2247 58.9949 29.2247 59.8137C29.2247 63.1687 26.6734 73.4198 25.065 79.0933L23.4193 84.8983H43.392L44.73 82.7426C45.2606 81.8875 57.7299 61.4438 57.7299 30.6245C57.7299 15.5354 45.454 3.25952 30.3649 3.25952ZM38.1615 75.7766H35.3953C36.7059 70.6266 38.3464 63.4531 38.3464 59.8137C38.3464 56.9258 38.132 54.6057 37.0851 52.6692C36.1526 50.9443 34.2024 48.8899 30.2021 48.868L30.003 48.863C20.1432 48.6719 12.1217 40.4902 12.1216 30.6245C12.1216 20.5651 20.3056 12.3812 30.3649 12.3812C40.4243 12.3812 48.6082 20.5651 48.6082 30.6245C48.6082 53.2735 41.1203 70.0377 38.1615 75.7766Z' fill='%23F2F2F2'/%3E%3Cpath d='M92.3922 3.25952C77.3032 3.25952 65.0273 15.5354 65.0273 30.6245C65.0273 37.8399 67.8112 44.6483 72.8659 49.7957C77.7593 54.7786 84.2461 57.6633 91.1948 57.9623C91.2276 58.3965 91.252 58.9949 91.252 59.8137C91.252 63.1687 88.7007 73.4198 87.0923 79.0933L85.4465 84.8983H105.419L106.757 82.7426C107.288 81.8875 119.757 61.4438 119.757 30.6245C119.757 15.5354 107.481 3.25952 92.3922 3.25952ZM100.189 75.7766H97.4226C98.7331 70.6266 100.374 63.4531 100.374 59.8137C100.374 56.9258 100.159 54.6057 99.1124 52.6692C98.1799 50.9443 96.2297 48.8899 92.2294 48.868L92.0303 48.863C82.1705 48.6719 74.1489 40.4902 74.1489 30.6245C74.1489 20.5651 82.3328 12.3812 92.3922 12.3812C102.452 12.3812 110.635 20.5651 110.635 30.6245C110.635 53.2735 103.148 70.0377 100.189 75.7766Z' fill='%23F2F2F2'/%3E%3Cpath d='M30.3649 3.25952C15.2759 3.25952 3 15.5354 3 30.6245C3 37.8399 5.78393 44.6483 10.8387 49.7957C15.732 54.7786 22.2189 57.6633 29.1675 57.9623C29.2003 58.3965 29.2247 58.9949 29.2247 59.8137C29.2247 63.1687 26.6734 73.4198 25.065 79.0933L23.4193 84.8983H43.392L44.73 82.7426C45.2606 81.8875 57.7299 61.4438 57.7299 30.6245C57.7299 15.5354 45.454 3.25952 30.3649 3.25952ZM38.1615 75.7766H35.3953C36.7059 70.6266 38.3464 63.4531 38.3464 59.8137C38.3464 56.9258 38.132 54.6057 37.0851 52.6692C36.1526 50.9443 34.2024 48.8899 30.2021 48.868L30.003 48.863C20.1432 48.6719 12.1217 40.4902 12.1216 30.6245C12.1216 20.5651 20.3056 12.3812 30.3649 12.3812C40.4243 12.3812 48.6082 20.5651 48.6082 30.6245C48.6082 53.2735 41.1203 70.0377 38.1615 75.7766Z' stroke='white' stroke-width='5'/%3E%3Cpath d='M92.3922 3.25952C77.3032 3.25952 65.0273 15.5354 65.0273 30.6245C65.0273 37.8399 67.8112 44.6483 72.8659 49.7957C77.7593 54.7786 84.2461 57.6633 91.1948 57.9623C91.2276 58.3965 91.252 58.9949 91.252 59.8137C91.252 63.1687 88.7007 73.4198 87.0923 79.0933L85.4465 84.8983H105.419L106.757 82.7426C107.288 81.8875 119.757 61.4438 119.757 30.6245C119.757 15.5354 107.481 3.25952 92.3922 3.25952ZM100.189 75.7766H97.4226C98.7331 70.6266 100.374 63.4531 100.374 59.8137C100.374 56.9258 100.159 54.6057 99.1124 52.6692C98.1799 50.9443 96.2297 48.8899 92.2294 48.868L92.0303 48.863C82.1705 48.6719 74.1489 40.4902 74.1489 30.6245C74.1489 20.5651 82.3328 12.3812 92.3922 12.3812C102.452 12.3812 110.635 20.5651 110.635 30.6245C110.635 53.2735 103.148 70.0377 100.189 75.7766Z' stroke='white' stroke-width='5'/%3E%3C/svg%3E");
+      left: 0;
+      bottom: 0;
+    }
+    &::after {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='123' height='88' viewBox='0 0 123 88' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M92.3921 84.8654C107.481 84.8654 119.757 72.5895 119.757 57.5005C119.757 50.285 116.973 43.4767 111.918 38.3293C107.025 33.3464 100.538 30.4616 93.5895 30.1627C93.5567 29.7285 93.5323 29.1301 93.5323 28.3112C93.5323 24.9563 96.0836 14.7051 97.692 9.0317L99.3378 3.22668L79.365 3.22669L78.0271 5.38236C77.4964 6.23752 65.0272 26.6812 65.0272 57.5005C65.0272 72.5895 77.3031 84.8654 92.3921 84.8654ZM84.5956 12.3483H87.3617C86.0512 17.4984 84.4107 24.6719 84.4107 28.3112C84.4107 31.1991 84.625 33.5192 85.672 35.4557C86.6044 37.1807 88.5546 39.2351 92.5549 39.257L92.754 39.262C102.614 39.4531 110.635 47.6348 110.635 57.5005C110.635 67.5599 102.451 75.7438 92.3921 75.7438C82.3328 75.7438 74.1488 67.5599 74.1488 57.5005C74.1488 34.8514 81.6368 18.0872 84.5956 12.3483Z' fill='%23F2F2F2'/%3E%3Cpath d='M30.3649 84.8657C45.4539 84.8657 57.7298 72.5898 57.7298 57.5007C57.7298 50.2853 54.9459 43.4769 49.8911 38.3296C44.9978 33.3466 38.511 30.4619 31.5623 30.1629C31.5295 29.7287 31.5051 29.1304 31.5051 28.3115C31.5051 24.9565 34.0564 14.7054 35.6648 9.03195L37.3106 3.22693L17.3378 3.22693L15.9999 5.38261C15.4692 6.23777 2.99993 26.6814 2.99994 57.5008C2.99994 72.5898 15.2759 84.8657 30.3649 84.8657ZM22.5684 12.3486H25.3345C24.024 17.4987 22.3834 24.6722 22.3834 28.3115C22.3834 31.1994 22.5978 33.5195 23.6447 35.456C24.5772 37.1809 26.5274 39.2353 30.5277 39.2572L30.7268 39.2622C40.5866 39.4533 48.6082 47.635 48.6082 57.5007C48.6082 67.5601 40.4242 75.744 30.3649 75.744C20.3055 75.744 12.1216 67.5601 12.1216 57.5008C12.1216 34.8517 19.6095 18.0875 22.5684 12.3486Z' fill='%23F2F2F2'/%3E%3Cpath d='M92.3921 84.8654C107.481 84.8654 119.757 72.5895 119.757 57.5005C119.757 50.285 116.973 43.4767 111.918 38.3293C107.025 33.3464 100.538 30.4616 93.5895 30.1627C93.5567 29.7285 93.5323 29.1301 93.5323 28.3112C93.5323 24.9563 96.0836 14.7051 97.692 9.0317L99.3378 3.22668L79.365 3.22669L78.0271 5.38236C77.4964 6.23752 65.0272 26.6812 65.0272 57.5005C65.0272 72.5895 77.3031 84.8654 92.3921 84.8654ZM84.5956 12.3483H87.3617C86.0512 17.4984 84.4107 24.6719 84.4107 28.3112C84.4107 31.1991 84.625 33.5192 85.672 35.4557C86.6044 37.1807 88.5546 39.2351 92.5549 39.257L92.754 39.262C102.614 39.4531 110.635 47.6348 110.635 57.5005C110.635 67.5599 102.451 75.7438 92.3921 75.7438C82.3328 75.7438 74.1488 67.5599 74.1488 57.5005C74.1488 34.8514 81.6368 18.0872 84.5956 12.3483Z' stroke='white' stroke-width='5'/%3E%3Cpath d='M30.3649 84.8657C45.4539 84.8657 57.7298 72.5898 57.7298 57.5007C57.7298 50.2853 54.9459 43.4769 49.8911 38.3296C44.9978 33.3466 38.511 30.4619 31.5623 30.1629C31.5295 29.7287 31.5051 29.1304 31.5051 28.3115C31.5051 24.9565 34.0564 14.7054 35.6648 9.03195L37.3106 3.22693L17.3378 3.22693L15.9999 5.38261C15.4692 6.23777 2.99993 26.6814 2.99994 57.5008C2.99994 72.5898 15.2759 84.8657 30.3649 84.8657ZM22.5684 12.3486H25.3345C24.024 17.4987 22.3834 24.6722 22.3834 28.3115C22.3834 31.1994 22.5978 33.5195 23.6447 35.456C24.5772 37.1809 26.5274 39.2353 30.5277 39.2572L30.7268 39.2622C40.5866 39.4533 48.6082 47.635 48.6082 57.5007C48.6082 67.5601 40.4242 75.744 30.3649 75.744C20.3055 75.744 12.1216 67.5601 12.1216 57.5008C12.1216 34.8517 19.6095 18.0875 22.5684 12.3486Z' stroke='white' stroke-width='5'/%3E%3C/svg%3E");
+      top: -45px;
+      right: 0;
+    }
+  }
+  &__thumb {
+    position: relative;
+    width: 377px;
+    height: 377px;
+    flex-shrink: 0;
+    &::before {
+      content: '';
+      position: absolute;
+      background: #F58971;
+      width: 377px;
+      height: 377px;
+      border-radius: 50%;
+    }
+    img {
+      position: absolute;
+      z-index: 5;
+      right: 0;
+      width: 331px;
+      bottom: 0;
+      clip-path: ellipse(232px 307px at 142px 111px);
+    }
+  }
+  @media (max-width: 991px) {
+    padding-bottom: 80px;
+    &__row {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__content {
+      padding-right: 0;
+      padding-bottom: 35px;
+    }
+  }
+  @media (max-width: 599px) {
+    &__quote {
+      padding-right: 15px;
+    }
+    &__content {
+      .h2, h2 {
+        font-size: 40px;
       }
     }
   }

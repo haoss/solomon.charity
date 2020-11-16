@@ -12,6 +12,18 @@ $(document).ready(function(){
     adaptiveHeight: false
   });
 
+  $('.j-blog-slider').slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    adaptiveHeight: false,
+    variableWidth: true,
+    prevArrow: '.index-blog__btn-left',
+    nextArrow: '.index-blog__btn-right'
+  });
+
   formPrayer();
   formLetter();
 
